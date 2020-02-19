@@ -1,9 +1,25 @@
 #!/usr/bin/python
-
+#[10, 7, 5, 8, 11, 9]
 import argparse
 
 def find_max_profit(prices):
-  pass
+  current_min_price_so_far = prices[0]
+  max_profit_so_far = prices[1] - current_min_price_so_far
+  for i in range(1, len(prices)):
+    if prices[i] - current_min_price_so_far > max_profit_so_far:
+      max_profit_so_far = prices[i] - current_min_price_so_far
+    if prices[i] < current_min_price_so_far:
+      current_min_price_so_far = prices[i]
+    
+  return max_profit_so_far
+
+
+
+
+
+
+
+
 
 
 if __name__ == '__main__':
